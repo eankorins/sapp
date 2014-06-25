@@ -1,5 +1,7 @@
+
 require 'spec_helper'
 describe "Static pages" do
+  include Rails.application.routes.url_helpers
   subject { page }
   describe "Home page" do
     before { visit root_path }

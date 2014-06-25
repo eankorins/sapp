@@ -1,5 +1,6 @@
 require 'spec_helper'
 describe "User pages" do
+	include Rails.application.routes.url_helpers
 	subject { page }
 	describe "signup page" do
 		before { visit signup_path }
