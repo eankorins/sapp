@@ -14,6 +14,7 @@ group :test do
 	gem 'capybara', '2.1.0'
 	gem 'spork-rails', '4.0.0'
 	gem 'guard-spork', '1.5.0'
+	gem 'factory_girl_rails', '4.2.1'
 	gem 'childprocess', '0.3.6'
 end
 
