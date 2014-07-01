@@ -3,11 +3,13 @@ require 'spec_helper'
 describe Micropost do
   let(:user) {FactoryGirl.create(:user)}
   before do
-  	@micropost = Micropost.new(content: "Lorem psum", user_id: user.id)
+  	@micropost = user.microposts.build(content: "Lorem ipsum")
   end
   subject{@micropost}
   it {should respond_to(:contet)}
   it {should respond_to(:user_id)}
+  it{should respond_to(:user)}
+  its(:user) {should eq user}
 
   it{should_not be_valid}
 

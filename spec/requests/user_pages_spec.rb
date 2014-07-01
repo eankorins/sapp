@@ -70,8 +70,8 @@ describe "User pages" do
 			let(:new_name) {"New name"}
 			let(:new_email) {"new@mail.com"}
 			before do
-				fill_in "Name",						with: "Example User"
-				fill_in "Email", 					with: "user@example.com"
+				fill_in "Name",						with: new_name
+				fill_in "Email", 					with: new_email	
 				fill_in "Password", 				with: "foobar"
 				fill_in "Password confirmation", 	with: "foobar"
 				click_button "Save"
