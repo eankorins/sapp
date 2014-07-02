@@ -46,7 +46,6 @@ describe "User pages" do
 			end
 			describe "followed by signout", js: true do
 				before do
-					click_link "Account"
 					click_link "Sign out"
 				end
 				it {should have_link('Sign in')}
@@ -56,7 +55,11 @@ describe "User pages" do
 	describe "edit" do
 		include Rails.application.routes.url_helpers
 		let(:user) { FactoryGirl.create(:user) }
-		before { visit edit_user_path(user) }
+		before do 
+			visit edit_user_path(user)
+			sign_in user
+		end
+		it { puts page.body}
 		describe "page" do
 			it { should have_content("Update your profile") }
 			it { should have_title("Edit user") }
@@ -72,8 +75,8 @@ describe "User pages" do
 			before do
 				fill_in "Name",						with: new_name
 				fill_in "Email", 					with: new_email	
-				fill_in "Password", 				with: "foobar"
-				fill_in "Password confirmation", 	with: "foobar"
+				fill_in "Password", 				with: user.password
+				fill_in "Password confirmation", 	with: user.password
 				click_button "Save"
 			end
 			it {should have_title(new_name)}

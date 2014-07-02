@@ -14,10 +14,13 @@ group :test do
 	gem 'capybara', '2.1.0'
 	gem 'spork-rails', '4.0.0'
 	gem 'guard-spork', '1.5.0'
+	gem 'guard-rspec', '2.5.0'
 	gem 'factory_girl_rails', '4.2.1'
 	gem 'childprocess', '0.3.6'
 	gem 'cucumber-rails', '1.4.0', :require => false
 	gem 'database_cleaner', github: 'bmabey/database_cleaner'
+	gem 'rb-notifu', '0.0.4'
+	gem 'wdm', '0.1.0'
 end
 
 gem 'sass-rails', '4.0.1'
