@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140703124201) do
 
-  create_table "dogs", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.integer  "user"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
